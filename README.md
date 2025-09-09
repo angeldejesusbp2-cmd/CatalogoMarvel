@@ -63,7 +63,7 @@ Catálogo-Marvel/
 
 ### 6.1 React Native (Expo)  
 ```bash
-git clone https://github.com/tuusuario/marvel-catalogo.git
+git clone https://github.com/angeldejesusbp2-cmd/CatalogoMarvel
 cd marvel-catalogo
 npm install
 npx expo start
@@ -71,7 +71,7 @@ npx expo start
 
 ### 6.2 Flutter  
 ```bash
-git clone https://github.com/tuusuario/marvel-catalogo.git
+git clone https://github.com/angeldejesusbp2-cmd/CatalogoMarvel
 cd marvel-catalogo
 flutter pub get
 flutter run

@@ -17,11 +17,11 @@ import {
 
 const Stack = createStackNavigator();
 
-function AppNavigator() {
-  const { isDark } = useTheme();
+function AppContent() {
+  const { isDark, currentTheme } = useTheme();
   
   return (
-    <>
+    <GluestackUIProvider mode={currentTheme}>
       <StatusBar style={isDark ? "light" : "dark"} />
       <Stack.Navigator
         initialRouteName="Home"
@@ -37,7 +37,7 @@ function AppNavigator() {
         <Stack.Screen name="Tema" component={TemaScreen} />
         <Stack.Screen name="Idioma" component={IdiomaScreen} />
       </Stack.Navigator>
-    </>
+    </GluestackUIProvider>
   );
 }
 
@@ -46,9 +46,7 @@ export default function App() {
     <ThemeProvider>
       <LanguageProvider>
         <NavigationContainer>
-          <GluestackUIProvider mode="light">
-            <AppNavigator />
-          </GluestackUIProvider>
+          <AppContent />
         </NavigationContainer>
       </LanguageProvider>
     </ThemeProvider>

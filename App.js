@@ -1,6 +1,4 @@
 import { StatusBar } from 'expo-status-bar';
-import "@/global.css";
-import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider/index";
 import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
@@ -21,7 +19,7 @@ function AppContent() {
   const { isDark, currentTheme } = useTheme();
   
   return (
-    <GluestackUIProvider mode={currentTheme}>
+    <>
       <StatusBar style={isDark ? "light" : "dark"} />
       <Stack.Navigator
         initialRouteName="Home"
@@ -37,7 +35,7 @@ function AppContent() {
         <Stack.Screen name="Tema" component={TemaScreen} />
         <Stack.Screen name="Idioma" component={IdiomaScreen} />
       </Stack.Navigator>
-    </GluestackUIProvider>
+    </>
   );
 }
 

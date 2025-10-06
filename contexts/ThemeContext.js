@@ -53,14 +53,14 @@ export const ThemeProvider = ({ children }) => {
   // Escuchar cambios del sistema cuando tema es 'sistema'
   useEffect(() => {
     if (theme === 'sistema') {
-      const subscription = Appearance.addChangeListener(({ colorScheme }) => {
+      const cleanup = addSystemThemeListener(({ colorScheme }) => {
         setCurrentTheme(colorScheme || 'light');
       });
       
       // Establecer tema inicial del sistema
-      setCurrentTheme(Appearance.getColorScheme() || 'light');
+      setCurrentTheme(getSystemColorScheme());
       
-      return () => subscription?.remove();
+      return cleanup;
     } else {
       setCurrentTheme(theme === 'oscuro' ? 'dark' : 'light');
     }

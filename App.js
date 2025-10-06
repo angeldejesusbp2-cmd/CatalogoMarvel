@@ -16,7 +16,7 @@ import {
 const Stack = createStackNavigator();
 
 function AppContent() {
-  const { isDark, currentTheme } = useTheme();
+  const { isDark } = useTheme();
   
   return (
     <>
@@ -24,7 +24,7 @@ function AppContent() {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerShown: false, // Ocultamos el header por defecto para usar nuestros headers personalizados
+          headerShown: false,
           cardStyle: { backgroundColor: isDark ? '#121212' : '#fff' }
         }}
       >

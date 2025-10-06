@@ -1,43 +1,59 @@
 import { StatusBar } from 'expo-status-bar';
 import "@/global.css";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider/index";
-import { StyleSheet, View } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
-import { Text } from "react-native";
-// import { NativeBaseProvider, extendTheme } from "native-base";
+import { createStackNavigator } from '@react-navigation/stack';
+import { ThemeProvider, useTheme } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
+import {
+  HomeScreen,
+  OpcionesScreen,
+  AjustesScreen,
+  AyudaScreen,
+  TemaScreen,
+  IdiomaScreen
+} from './screens';
 
-// Define una configuración personalizada para NativeBase
-// const config = {
-//   suppressColorAccessibilityWarning: true,
-//   // Deshabilita las advertencias de SSRProvider
-//   useRNUILib: false
-// };
+const Stack = createStackNavigator();
 
-// Extiende el tema predeterminado
-// const theme = extendTheme({ config });
-
-export default function App() {
+function AppNavigator() {
+  const { isDark } = useTheme();
+  
   return (
-    <NavigationContainer>
-      <GluestackUIProvider mode="light">
-        <View style={styles.container}>
-          <Text>CatalogoMarvel
-          </Text>
-          <StatusBar style="auto" />
-        </View>
-      </GluestackUIProvider>
-    </NavigationContainer>
+    <>
+      <StatusBar style={isDark ? "light" : "dark"} />
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerShown: false, // Ocultamos el header por defecto para usar nuestros headers personalizados
+          cardStyle: { backgroundColor: isDark ? '#121212' : '#fff' }
+        }}
+      >
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Opciones" component={OpcionesScreen} />
+        <Stack.Screen name="Ajustes" component={AjustesScreen} />
+        <Stack.Screen name="Ayuda" component={AyudaScreen} />
+        <Stack.Screen name="Tema" component={TemaScreen} />
+        <Stack.Screen name="Idioma" component={IdiomaScreen} />
+      </Stack.Navigator>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <ThemeProvider>
+      <LanguageProvider>
+        <NavigationContainer>
+          <GluestackUIProvider mode="light">
+            <AppNavigator />
+          </GluestackUIProvider>
+        </NavigationContainer>
+      </LanguageProvider>
+    </ThemeProvider>
+  );
+}
 
 
 

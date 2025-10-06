@@ -9,3 +9,5 @@ The following packages should be updated for best compatibility with the install
 Your project may not work correctly until you install the expected versions of the packages.
 Waiting on http://localhost:8081
 Logs for your project will appear below.
+Web Bundling failed 5059ms index.js (888 modules)
+Unable to resolve "dom-helpers/css" from "node_modules/@gluestack-ui/core/lib/esm/overlay/aria/web/overlays/src/calculatePosition.js"

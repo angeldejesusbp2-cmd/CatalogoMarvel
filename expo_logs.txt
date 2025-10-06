@@ -11,3 +11,5 @@ Waiting on http://localhost:8081
 Logs for your project will appear below.
 Web Bundling failed 5059ms index.js (888 modules)
 Unable to resolve "dom-helpers/css" from "node_modules/@gluestack-ui/core/lib/esm/overlay/aria/web/overlays/src/calculatePosition.js"
+error Command failed with signal "SIGTERM".
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

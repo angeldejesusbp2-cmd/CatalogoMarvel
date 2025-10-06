@@ -1,0 +1,4 @@
+yarn run v1.22.22
+$ expo start --web
+Starting project at /app
+Starting Metro Bundler

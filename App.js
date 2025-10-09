@@ -11,7 +11,7 @@ import {
   AyudaScreen,
   TemaScreen,
   IdiomaScreen
-} from './screens';
+} from './src/screens';
 
 const Stack = createStackNavigator();
 

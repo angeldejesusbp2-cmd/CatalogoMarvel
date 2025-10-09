@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Text } from 'react-native';
-import { useLanguage } from '../contexts/LanguageContext';
-import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export default function AjustesScreen({ navigation }) {
+export default function OpcionesScreen({ navigation }) {
   const { t } = useLanguage();
   const { isDark } = useTheme();
 
@@ -29,14 +29,14 @@ export default function AjustesScreen({ navigation }) {
 
   const menuItems = [
     {
-      title: t('tema'),
-      icon: 'palette',
-      onPress: () => navigation.navigate('Tema')
+      title: t('ajustes'),
+      icon: 'settings',
+      onPress: () => navigation.navigate('Ajustes')
     },
     {
-      title: t('idioma'),
-      icon: 'language',
-      onPress: () => navigation.navigate('Idioma')
+      title: t('ayuda'),
+      icon: 'help',
+      onPress: () => navigation.navigate('Ayuda')
     }
   ];
 
@@ -50,7 +50,7 @@ export default function AjustesScreen({ navigation }) {
           <Icon name="arrow-back" size={24} color={isDark ? '#fff' : '#333'} />
         </TouchableOpacity>
         <Text style={[styles.headerTitle, { color: isDark ? '#fff' : '#333' }]}>
-          {t('ajustes')}
+          {t('opciones')}
         </Text>
       </View>
 

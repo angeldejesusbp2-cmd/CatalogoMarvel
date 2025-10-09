@@ -1,39 +1,45 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, SafeAreaView, FlatList } from 'react-native';
 import { Text } from 'react-native';
-import { useLanguage } from '../contexts/LanguageContext';
-import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export default function IdiomaScreen({ navigation }) {
-  const { t, language, setLanguage } = useLanguage();
-  const { isDark } = useTheme();
+export default function TemaScreen({ navigation }) {
+  const { t } = useLanguage();
+  const { isDark, theme, setTheme } = useTheme();
 
   const containerStyle = [
     styles.container,
     { backgroundColor: isDark ? '#121212' : '#fff' }
   ];
 
-  const languageOptions = [
+  const themeOptions = [
     {
-      key: 'es',
-      title: 'Español',
-      subtitle: 'Spanish',
-      flag: '🇪🇸'
+      key: 'claro',
+      title: t('claro'),
+      icon: 'wb-sunny',
+      description: 'Tema claro para uso diurno'
     },
     {
-      key: 'en',
-      title: 'English',
-      subtitle: 'Inglés',
-      flag: '🇺🇸'
+      key: 'oscuro',
+      title: t('oscuro'),
+      icon: 'brightness-2',
+      description: 'Tema oscuro para uso nocturno'
+    },
+    {
+      key: 'sistema',
+      title: t('predeterminadoSistema'),
+      icon: 'settings-system-daydream',
+      description: 'Sigue la configuración del sistema'
     }
   ];
 
-  const renderLanguageOption = ({ item }) => {
-    const isSelected = language === item.key;
+  const renderThemeOption = ({ item }) => {
+    const isSelected = theme === item.key;
     
     const itemStyle = [
-      styles.languageItem,
+      styles.themeItem,
       { 
         backgroundColor: isDark ? '#1e1e1e' : '#f8f8f8',
         borderColor: isSelected ? (isDark ? '#4CAF50' : '#2196F3') : (isDark ? '#333' : '#e0e0e0'),
@@ -42,12 +48,12 @@ export default function IdiomaScreen({ navigation }) {
     ];
 
     const titleStyle = [
-      styles.languageTitle,
+      styles.themeTitle,
       { color: isDark ? '#fff' : '#333' }
     ];
 
-    const subtitleStyle = [
-      styles.languageSubtitle,
+    const descriptionStyle = [
+      styles.themeDescription,
       { color: isDark ? '#ccc' : '#666' }
     ];
 
@@ -55,7 +61,7 @@ export default function IdiomaScreen({ navigation }) {
       <TouchableOpacity
         style={itemStyle}
         onPress={() => {
-          setLanguage(item.key);
+          setTheme(item.key);
           // Pequeño delay para mostrar la selección antes de regresar
           setTimeout(() => {
             navigation.goBack();
@@ -63,12 +69,16 @@ export default function IdiomaScreen({ navigation }) {
         }}
         activeOpacity={0.7}
       >
-        <View style={styles.languageContent}>
-          <View style={styles.languageLeft}>
-            <Text style={styles.flag}>{item.flag}</Text>
-            <View style={styles.languageTextContainer}>
+        <View style={styles.themeContent}>
+          <View style={styles.themeLeft}>
+            <Icon 
+              name={item.icon} 
+              size={28} 
+              color={isSelected ? (isDark ? '#4CAF50' : '#2196F3') : (isDark ? '#fff' : '#666')} 
+            />
+            <View style={styles.themeTextContainer}>
               <Text style={titleStyle}>{item.title}</Text>
-              <Text style={subtitleStyle}>{item.subtitle}</Text>
+              <Text style={descriptionStyle}>{item.description}</Text>
             </View>
           </View>
           {isSelected && (
@@ -93,13 +103,13 @@ export default function IdiomaScreen({ navigation }) {
           <Icon name="arrow-back" size={24} color={isDark ? '#fff' : '#333'} />
         </TouchableOpacity>
         <Text style={[styles.headerTitle, { color: isDark ? '#fff' : '#333' }]}>
-          {t('idioma')}
+          {t('tema')}
         </Text>
       </View>
 
       <FlatList
-        data={languageOptions}
-        renderItem={renderLanguageOption}
+        data={themeOptions}
+        renderItem={renderThemeOption}
         keyExtractor={(item) => item.key}
         contentContainerStyle={styles.listContainer}
         showsVerticalScrollIndicator={false}
@@ -130,34 +140,31 @@ const styles = StyleSheet.create({
   listContainer: {
     padding: 16,
   },
-  languageItem: {
+  themeItem: {
     borderRadius: 12,
     padding: 16,
     marginBottom: 12,
   },
-  languageContent: {
+  themeContent: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  languageLeft: {
+  themeLeft: {
     flexDirection: 'row',
     alignItems: 'center',
     flex: 1,
   },
-  flag: {
-    fontSize: 32,
-    marginRight: 16,
-  },
-  languageTextContainer: {
+  themeTextContainer: {
+    marginLeft: 16,
     flex: 1,
   },
-  languageTitle: {
+  themeTitle: {
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 4,
   },
-  languageSubtitle: {
+  themeDescription: {
     fontSize: 14,
   },
 });

@@ -79,6 +79,14 @@ flutter run
 
 ---
 
+### 7. Capturas de Pantalla
+![Ajustes](./img/Ajustes.jpg)
+![Ayuda](./img/Ayuda.jpg)
+![Idioma](./img/Idioma.jpg)
+![Inicio](./img/Inicio.jpg)
+![Opciones](./img/Opciones.jpg)
+![Tema](./img/Tema.jpg)
+
 ## 7. Plan de mejoras (Roadmap)  
 - Inclusión de series de Marvel Studios.  
 - Integración de trivia, datos curiosos y “easter eggs”.  

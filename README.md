@@ -81,13 +81,19 @@ flutter run
 
 ### 7. Capturas de Pantalla
 ![Ajustes](./img/Ajustes.jpg)
+- Captura de pantalla sobre los ajustes de la aplicacion.
 ![Ayuda](./img/Ayuda.jpg)
+- Captura de pantalla sobre la opcion de ayuda de la aplicacion.
 ![Idioma](./img/Idioma.jpg)
+- Captura de pantalla sobre la opcion de idioma de la aplicacion.
 ![Inicio](./img/Inicio.jpg)
+- Captura de pantalla sobre el inicio de la aplicacion.
 ![Opciones](./img/Opciones.jpg)
+- Captura de pantalla sobre las opciones de la aplicacion.
 ![Tema](./img/Tema.jpg)
+- Captura de pantalla sobre la opcione tema de la aplicacion.
 
-## 7. Plan de mejoras (Roadmap)  
+## 8. Plan de mejoras (Roadmap)  
 - Inclusión de series de Marvel Studios.  
 - Integración de trivia, datos curiosos y “easter eggs”.  
 - Sistema de recomendaciones personalizadas.  
@@ -95,7 +101,7 @@ flutter run
 
 ---
 
-## 8. Contribuciones  
+## 9. Contribuciones  
 Se aceptan contribuciones bajo un modelo de **pull requests**.  
 Para colaborar:  
 1. Realizar un **fork** del repositorio.  
@@ -105,5 +111,5 @@ Para colaborar:
 
 ---
 
-## 9. Licencia  
+## 10. Licencia  
 El proyecto se distribuye bajo la licencia **MIT**, lo que permite su uso, modificación y distribución, siempre y cuando se mantenga el reconocimiento a los autores originales.  

@@ -80,23 +80,28 @@ flutter run
 ---
 
 ## 7. Capturas de Pantalla
-### Captura de pantalla sobre los ajustes de la aplicacion.
+### 7.1 Captura de pantalla sobre los ajustes de la aplicacion.
 ![Ajustes](./img/Ajustes.jpg)
 
-### Captura de pantalla sobre la opcion de ayuda de la aplicacion.
+
+### 7.2 Captura de pantalla sobre la opcion de ayuda de la aplicacion.
 ![Ayuda](./img/Ayuda.jpg)
 
-### Captura de pantalla sobre la opcion de idioma de la aplicacion.
+
+### 7.3 Captura de pantalla sobre la opcion de idioma de la aplicacion.
 ![Idioma](./img/Idioma.jpg)
 
-### Captura de pantalla sobre el inicio de la aplicacion.
+
+### 7.4 Captura de pantalla sobre el inicio de la aplicacion.
 ![Inicio](./img/Inicio.jpg)
 
   
-### Captura de pantalla sobre las opciones de la aplicacion.
+
+### 7.5 Captura de pantalla sobre las opciones de la aplicacion.
 ![Opciones](./img/Opciones.jpg)
 
-### Captura de pantalla sobre la opcione tema de la aplicacion.
+
+### 7.6Captura de pantalla sobre la opcione tema de la aplicacion.
 ![Tema](./img/Tema.jpg)
 
 

@@ -101,7 +101,7 @@ flutter run
 ![Opciones](./img/Opciones.jpg)
 
 
-### 7.6Captura de pantalla sobre la opcione tema de la aplicacion.
+### 7.6 Captura de pantalla sobre la opcione tema de la aplicacion.
 ![Tema](./img/Tema.jpg)
 
 

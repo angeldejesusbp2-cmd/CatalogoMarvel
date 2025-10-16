@@ -1,16 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
+import SplashScreen from './src/components/SplashScreen';
 import {
   HomeScreen,
   OpcionesScreen,
   AjustesScreen,
   AyudaScreen,
   TemaScreen,
-  IdiomaScreen
+  IdiomaScreen,
+  CharacterDetailScreen
 } from './src/screens';
 
 const Stack = createStackNavigator();
@@ -34,17 +36,28 @@ function AppContent() {
         <Stack.Screen name="Ayuda" component={AyudaScreen} />
         <Stack.Screen name="Tema" component={TemaScreen} />
         <Stack.Screen name="Idioma" component={IdiomaScreen} />
+        <Stack.Screen name="CharacterDetail" component={CharacterDetailScreen} />
       </Stack.Navigator>
     </>
   );
 }
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleSplashFinish = () => {
+    setIsLoading(false);
+  };
+
   return (
     <ThemeProvider>
       <LanguageProvider>
         <NavigationContainer>
-          <AppContent />
+          {isLoading ? (
+            <SplashScreen onFinish={handleSplashFinish} />
+          ) : (
+            <AppContent />
+          )}
         </NavigationContainer>
       </LanguageProvider>
     </ThemeProvider>

@@ -79,13 +79,13 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: 10,
+    paddingVertical: 30,
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
   },
   backButton: {
-    marginRight: 16,
+    marginRight: 10,
   },
   headerTitle: {
     fontSize: 20,
@@ -93,18 +93,18 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    paddingTop: 20,
+    paddingTop: 10,
   },
   menuItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    borderBottomWidth: 1,
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+    borderBottomWidth: 1.5,
   },
   menuText: {
     fontSize: 16,
-    flex: 1,
+    flex: 2,
     marginLeft: 16,
   },
 });

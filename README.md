@@ -1,13 +1,13 @@
-# 📽️ Catálogo de Películas de Marvel  
+# 📽️ Catálogo de los Personajes de Marvel  
 
 ## 1. Introducción  
-El presente documento describe la aplicación móvil **Catálogo de Películas de Marvel**, diseñada para ofrecer a los usuarios un acceso organizado y actualizado al universo cinematográfico de Marvel (MCU).  
+El presente documento describe la aplicación móvil **Catálogo de los Personajes de Marvel**, diseñada para ofrecer a los usuarios un acceso organizado y actualizado al universo cinematográfico de Marvel (MCU).  
 La aplicación proporciona información detallada de cada producción, incluyendo título, fecha de estreno, sinopsis, elenco y orden cronológico, constituyéndose como una herramienta de consulta tanto para aficionados como para investigadores del cine contemporáneo.  
 
 ---
 
 ## 2. Objetivo  
-El objetivo principal de la aplicación es **centralizar y facilitar el acceso a la información de las películas de Marvel**, mediante una interfaz intuitiva, con soporte para búsquedas avanzadas y opciones de personalización como listas de favoritos y modo oscuro.  
+El objetivo principal de la aplicación es **centralizar y facilitar el acceso a la información de los Personajes de Marvel**, mediante una interfaz intuitiva, con soporte para búsquedas avanzadas y opciones de personalización como listas de favoritos y modo oscuro.  
 
 ---
 
@@ -44,13 +44,12 @@ El sistema incluye:
 Catálogo-Marvel/
 │
 ├── assets/              # Recursos gráficos e íconos
+├── contexts/            # Contexto del tema y leguaje de la aplicación
 ├── src/
 │   ├── api/             # Conexiones a la API externa
 │   ├── components/      # Componentes visuales reutilizables
 │   ├── screens/         # Vistas principales (Inicio, Detalle, Favoritos)
-│   ├── navigation/      # Configuración de rutas y navegación
-│   ├── store/           # Manejo del estado global
-│   └── utils/           # Funciones auxiliares
+│   ├── services/        # Servicios de los detalles de cada personaje de Marvel
 │
 ├── App.js / main.dart   # Punto de entrada de la aplicación
 ├── package.json / pubspec.yaml

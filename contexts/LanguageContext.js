@@ -27,6 +27,11 @@ const texts = {
     claro: 'Claro',
     predeterminadoSistema: 'Predeterminado por el Sistema',
     
+    // Pantalla de detalles
+    noDescription: 'No hay descripción disponible.',
+    comics: 'Comics',
+    characterNotFound: 'No se encontró el personaje',
+    
     // Opciones de idioma
     español: 'Español',
     ingles: 'Inglés',
@@ -49,6 +54,11 @@ const texts = {
     claro: 'Light',
     predeterminadoSistema: 'System Default',
     
+    // Pantalla de detalles
+    noDescription: 'No description available.',
+    comics: 'Comics',
+    characterNotFound: 'Character not found',
+
     // Opciones de idioma
     español: 'Spanish',
     ingles: 'English',

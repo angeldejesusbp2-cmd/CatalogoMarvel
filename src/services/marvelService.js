@@ -1,5 +1,5 @@
 import md5 from 'md5';
-import { MARVEL_API } from '../config/marvel';
+import { MARVEL_API } from '../api/marvel';
 
 
 class MarvelService {

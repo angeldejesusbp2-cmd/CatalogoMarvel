@@ -10,12 +10,14 @@ import {
   FlatList
 } from 'react-native';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import marvelService from '../services/marvelService';
 
 export default function CharacterDetailScreen({ route, navigation }) {
   const { characterId } = route.params;
   const { isDark } = useTheme();
+  const { currentLanguage, t } = useLanguage();
   const [character, setCharacter] = useState(null);
   const [comics, setComics] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,6 +25,14 @@ export default function CharacterDetailScreen({ route, navigation }) {
   useEffect(() => {
     loadCharacterDetails();
   }, []);
+
+  const getTranslatedDescription = (description, language) => {
+    // Aquí puedes implementar la lógica de traducción
+    if (language === 'es') {
+      return description; // La descripción original está en inglés
+    }
+    return description; // Retornamos la descripción original si es inglés u otro idioma
+  };
 
   const loadCharacterDetails = async () => {
     try {
@@ -41,6 +51,7 @@ export default function CharacterDetailScreen({ route, navigation }) {
     return (
       <View style={[styles.container, { backgroundColor: isDark ? '#121212' : '#fff' }]}>
         <ActivityIndicator size="large" color={isDark ? '#fff' : '#000'} />
+        <Text style={{ color: isDark ? '#fff' : '#000', marginTop: 10 }}>{t('loading')}</Text>
       </View>
     );
   }
@@ -48,7 +59,7 @@ export default function CharacterDetailScreen({ route, navigation }) {
   if (!character) {
     return (
       <View style={[styles.container, { backgroundColor: isDark ? '#121212' : '#fff' }]}>
-        <Text style={{ color: isDark ? '#fff' : '#000' }}>No se encontró el personaje</Text>
+        <Text style={{ color: isDark ? '#fff' : '#000' }}>{t('characterNotFound')}</Text>
       </View>
     );
   }
@@ -76,11 +87,11 @@ export default function CharacterDetailScreen({ route, navigation }) {
           </Text>
           
           <Text style={[styles.description, { color: isDark ? '#ddd' : '#333' }]}>
-            {character.description || 'No hay descripción disponible.'}
+            {character.description ? getTranslatedDescription(character.description, currentLanguage) : t('noDescription')}
           </Text>
 
           <Text style={[styles.sectionTitle, { color: isDark ? '#fff' : '#000' }]}>
-            Comics
+            {t('comics')}
           </Text>
 
           <FlatList

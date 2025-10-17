@@ -44,7 +44,7 @@ El sistema incluye:
 Catálogo-Marvel/
 │
 ├── assets/              # Recursos gráficos e íconos
-├── contexts/            # Contexto del tema y leguaje de la aplicación
+├── contexts/            # Contexto del tema y lenguaje de la aplicación
 ├── src/
 │   ├── api/             # Conexiones a la API externa
 │   ├── components/      # Componentes visuales reutilizables
@@ -79,29 +79,33 @@ flutter run
 ---
 
 ## 7. Capturas de Pantalla
-### 7.1 Captura de pantalla sobre los ajustes de la aplicacion.
-![Ajustes](./img/Ajustes.jpg)
+### 7.1 Captura de pantalla sobre el logo de la aplicacion.
+![Logo](./img/Logo.jpg)
 
 
-### 7.2 Captura de pantalla sobre la opcion de ayuda de la aplicacion.
-![Ayuda](./img/Ayuda.jpg)
-
-
-### 7.3 Captura de pantalla sobre la opcion de idioma de la aplicacion.
-![Idioma](./img/Idioma.jpg)
-
-
-### 7.4 Captura de pantalla sobre el inicio de la aplicacion.
+### 7.2 Captura de pantalla sobre el inicio de la aplicacion.
 ![Inicio](./img/Inicio.jpg)
 
-  
 
-### 7.5 Captura de pantalla sobre las opciones de la aplicacion.
+### 7.3 Captura de pantalla sobre las opciones de la aplicacion.
 ![Opciones](./img/Opciones.jpg)
 
 
-### 7.6 Captura de pantalla sobre la opcione tema de la aplicacion.
+### 7.4 Captura de pantalla sobre los ajustes de la aplicacion.
+![Ajustes](./img/Ajustes.jpg)
+
+  
+
+### 7.5 Captura de pantalla sobre las opciones del tema de la aplicacion.
 ![Tema](./img/Tema.jpg)
+
+
+### 7.6 Captura de pantalla sobre las opciones del idioma de la aplicacion.
+![Idioma](./img/Idioma.jpg)
+
+
+### 7.7 Captura de pantalla sobre las opcion de ayuda de la aplicacion.
+![Ayuda](./img/Ayuda.jpg)
 
 
 ## 8. Plan de mejoras (Roadmap)  
